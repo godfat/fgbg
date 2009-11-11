@@ -13,18 +13,18 @@ import flash.events.IOErrorEvent;
 public class Wrapper{
   static public var ie_hack: Boolean = false;
   public function Wrapper(uri: String, parent: Sprite,
-    width: Number, height: Number,
+    width: Number = null, height: Number = null,
     callback: Function = null)
   {
     parent_ = parent;
     body_ = new Loader();
     parent_.addChild(body_);
-    width_ = width;
-    height_ = height;
+    if(width)  width_  = width;
+    if(height) height_ = height;
 
     body_.contentLoaderInfo.addEventListener(Event.COMPLETE, function(){
-      body_.width = width_;
-      body_.height = height_;
+      if(width)  body_.width_  = width;
+      if(height) body_.height_ = height;
       callback && callback();
     });
     body_.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, callback || function(){});

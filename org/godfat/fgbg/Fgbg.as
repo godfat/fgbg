@@ -4,12 +4,14 @@ import org.godfat.Wrapper;
 import flash.display.Sprite;
 
 public class Fgbg{
-  public function Fgbg(uri_fg: String, uri_bg: String, parent: Sprite){
+  public function Fgbg(fg_uri: String, bg_uri: String, parent: Sprite,
+    bg_width: Number, bg_height: Number)
+  {
     parent_ = parent;
     body_ = Sprite(parent_.addChild(new Sprite()));
 
-    fg_ = new Wrapper(uri_fg, body_, parent_.width, parent_.height);
-    bg_ = new Wrapper(uri_bg, body_, parent_.width, parent_.height);
+    fg_ = new Wrapper(fg_uri, body_);
+    bg_ = new Wrapper(bg_uri, body_, bg_width, bg_height);
   }
 
   public function get fg(){ return fg_; }
