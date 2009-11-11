@@ -15,9 +15,9 @@ public class Fgbg{
   public function get fg(){ return fg_; }
   public function get bg(){ return bg_; }
 
-  private parent_: Sprite;
-  private body_: Sprite;
-  private fg_: Wrapper;
-  private bg_: Wrapper;
+  private var parent_: Sprite;
+  private var body_: Sprite;
+  private var fg_: Wrapper;
+  private var bg_: Wrapper;
 }
 }
