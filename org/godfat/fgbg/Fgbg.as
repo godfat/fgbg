@@ -8,8 +8,8 @@ public class Fgbg{
     parent_ = parent;
     body_ = Sprite(parent_.addChild(new Sprite()));
 
-    fg_ = new Wrapper(uri_fg, body_);
-    bg_ = new Wrapper(uri_bg, body_);
+    fg_ = new Wrapper(uri_fg, body_, parent_.width, parent_.height);
+    bg_ = new Wrapper(uri_bg, body_, parent_.width, parent_.height);
   }
 
   public function get fg(){ return fg_; }
